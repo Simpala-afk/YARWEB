@@ -325,17 +325,16 @@
         .submit-btn { background: linear-gradient(90deg, #ff3366, #ff5e3a); color: white; border: none; padding: 14px; border-radius: 12px; font-size: 1rem; font-weight: 700; cursor: pointer; transition: all 0.3s; margin-top: 5px; box-shadow: 0 8px 20px rgba(255, 51, 102, 0.2); }
         .submit-btn:hover { transform: translateY(-2px); box-shadow: 0 12px 25px rgba(255, 51, 102, 0.4); }
 /* ========================================== */
-        /* УЛЬТРА-АДАПТИВНАЯ ВЕРСТКА ДЛЯ МОБИЛЬНЫХ    */
+        /* ИДЕАЛЬНАЯ МОБИЛЬНАЯ ВЕРСТКА ДЛЯ СМАРТФОНОВ */
         /* ========================================== */
         @media (max-width: 768px) {
-            /* Блокируем любой горизонтальный скролл на корневом уровне */
+            /* 1. Блокируем скролл сайта вбок и убираем компьютерную высоту */
             html, body {
                 max-width: 100% !important;
                 overflow-x: hidden !important;
                 height: auto !important;
             }
 
-            /* Переводим страницы в нормальный потоковый режим, убираем vh-завязки */
             .page-container {
                 height: auto !important;
                 overflow: visible !important;
@@ -348,76 +347,150 @@
                 min-height: auto !important;
                 width: 100% !important;
                 max-width: 100% !important;
-                padding: 120px 4% 40px 4% !important; /* Увеличили верхний отступ, чтобы шапка не перекрывала код */
+                padding: 130px 4% 40px 4% !important; /* Большой отступ сверху, чтобы шапка не перекрывала контент */
                 box-sizing: border-box !important;
-                overflow: hidden !important;
+                display: none !important; /* Прячем все страницы */
             }
 
-            /* Исправляем шапку: делаем её компактной, меню внутри неё можно листать вбок отдельно от сайта */
+            /* Показываем только активную страницу в виде обычного вертикального блока */
+            .page.active {
+                display: flex !important;
+                flex-direction: column !important;
+                opacity: 1 !important;
+                visibility: visible !important;
+            }
+
+            /* 2. Настройка шапки сайта */
             header {
                 padding: 10px 4% !important;
                 width: 100% !important;
                 box-sizing: border-box !important;
-                background: rgba(20, 20, 20, 0.95) !important; /* Плотный фон, чтобы текст под ним не сливался */
+                position: fixed !important;
+                flex-direction: column !important;
+                gap: 10px !important;
+            }
+            
+            header .cta-button {
+                display: none !important; /* Убираем лишнюю кнопку "Связаться" из шапки на мобилке */
             }
 
+            /* 3. Горизонтальное скролл-меню в шапке */
             .nav-menu {
                 width: 100% !important;
                 display: flex !important;
-                overflow-x: auto !important; /* Меню скроллится пальцем влево-вправо */
+                overflow-x: auto !important; /* Меню можно аккуратно листать пальцем влево-вправо */
                 overflow-y: hidden !important;
                 white-space: nowrap !important;
                 gap: 15px !important;
-                padding: 5px 0 !important;
+                padding: 5px 0 10px 0 !important;
                 -webkit-overflow-scrolling: touch;
+                justify-content: flex-start !important;
+            }
+            .nav-menu::-webkit-scrollbar {
+                display: none !important; /* Скрываем полосу прокрутки меню */
             }
 
-            /* Убираем фиксированный размер заголовков, чтобы они не выталкивали экран вбок */
-            h1, h2, .price-page h2 {
+            /* 4. Адаптация заголовков */
+            h1, h2, .section-title {
                 font-size: 1.8rem !important;
-                line-height: 1.2 !important;
+                line-height: 1.25 !important;
                 width: 100% !important;
-                max-width: 100% !important;
-                white-space: normal !important;
-                overflow-wrap: break-word !important;
+                text-align: center !important;
+            }
+            .section-subtitle {
+                font-size: 0.95rem !important;
+                margin-bottom: 25px !important;
             }
 
-            /* Ремонт карточек этапов работы (чтобы текст не резался внизу) */
-            .step-row {
-                height: auto !important; /* Разрешаем блоку растягиваться вниз под текст */
-                min-height: min-content !important;
-                padding: 20px !important;
-            }
-
-            .step-text, .step-text p {
+            /* 5. РЕМОНТ ПРЕИМУЩЕСТВ: Раскрываем текст навсегда */
+            .features-split-container {
+                flex-direction: column !important;
+                gap: 25px !important;
                 height: auto !important;
+            }
+            .features-list-side, .features-image-side {
+                width: 100% !important;
+                height: auto !important;
+            }
+            .feature-item-row {
+                padding: 20px !important;
+                transform: none !important;
+            }
+            /* Принудительно показываем скрытый текст описания преимуществ */
+            .feature-item-details {
                 max-height: none !important;
-                overflow: visible !important; /* Текст больше не прячется */
+                opacity: 1 !important;
+                margin-top: 10px !important;
+                display: block !important;
+            }
+            .features-image-side {
+                display: none !important; /* На телефонах прячем большую рамку с картинками, чтобы не занимала экран */
             }
 
-            /* Ремонт прайс-листа и карточек */
+            /* 6. РЕМОНТ ЭТАПОВ РАЗРАБОТКИ: Раскрываем текст навсегда */
+            .steps-container {
+                gap: 15px !important;
+            }
+            .step-row {
+                flex-direction: column !important;
+                align-items: flex-start !important;
+                padding: 20px !important;
+                height: auto !important;
+            }
+            .step-number {
+                margin-right: 0 !important;
+                margin-bottom: 10px !important;
+                font-size: 1.6rem !important;
+            }
+            /* Принудительно открываем скрытый текст описания этапов */
+            .step-description {
+                max-height: none !important;
+                opacity: 1 !important;
+                margin-top: 8px !important;
+                display: block !important;
+            }
+
+            /* 7. РЕМОНТ ПРАЙС-ЛИСТА: Карточки в ряд друг под другом, строго в рамках экрана */
             .price-grid {
-                display: flex !important;
                 flex-direction: column !important;
                 width: 100% !important;
                 max-width: 100% !important;
-                margin: 0 auto !important;
-                padding: 0 !important;
                 gap: 20px !important;
+                margin: 0 !important;
+                padding: 0 !important;
             }
-
             .price-card {
-                width: 100% !important;
-                max-width: 100% !important; /* Карточка занимает всю ширину экрана смартфона */
+                width: 100% !important; /* Теперь карточка не ломает экран, а сжимается под телефон */
+                max-width: 100% !important;
                 box-sizing: border-box !important;
                 height: auto !important;
+                padding: 30px 20px !important;
             }
 
-            /* Полностью убираем или уменьшаем мешающие фоновые фигуры */
-            .global-shape {
-                display: none !important; /* Самый надежный способ на мобилках, чтобы ничего не съезжало */
+            /* 8. Контакты и форма */
+            .contact-box {
+                flex-direction: column !important;
+                padding: 30px 20px !important;
+                gap: 30px !important;
+                text-align: center !important;
             }
-        }    </style>
+            .contact-info, .contact-action-zone {
+                max-width: 100% !important;
+                width: 100% !important;
+            }
+            .manager-card {
+                border-left: none !important;
+                border-top: 4px solid #ff3366;
+                border-radius: 12px !important;
+                padding: 15px !important;
+            }
+
+            /* Убираем фоновые 3D фигуры на мобилках, чтобы ничего случайно не вылезло за экран */
+            .global-shape {
+                display: none !important;
+            }
+        }    
+</style>
 </head>
 <body data-page="hero">
 
