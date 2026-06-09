@@ -663,7 +663,8 @@
             <h2 class="section-title">Стоимость разработки</h2>
             <div class="section-subtitle"> Указана приблизительная цена</div>
             <div class="price-grid">
-                <div class="price-card" style="--accent-color: #33ccff; --shadow-color: rgba(51, 204, 255, 0.15);" onclick="showPage('contact')">
+                <!-- Карточка 1: Визитка -->
+                <div class="price-card" style="--accent-color: #33ccff; --shadow-color: rgba(51, 204, 255, 0.15);" onclick="window.open('tariff.html?type=vizitka', '_blank')">
                     <div class="price-card-tag">Базовый</div>
                     <h3>Сайт-визитка</h3>
                     <div class="price-value">от 15 000 ₽</div>
@@ -673,11 +674,12 @@
                         <li>Адаптивный дизайн</li>
                         <li>Настройка базовой SEO</li>
                     </ul>
-                    <button class="price-btn">Выбрать тариф</button>
+                    <button class="price-btn">Подробнее о тарифе</button>
                 </div>
-                <div class="price-card" style="--accent-color: #ff3366; --shadow-color: rgba(255, 51, 102, 0.15);" onclick="showPage('contact')">
+                <!-- Карточка 2: Корпоративный -->
+                <div class="price-card" style="--accent-color: #ff3366; --shadow-color: rgba(255, 51, 102, 0.15);" onclick="window.open('tariff.html?type=corp', '_blank')">
                     <div class="price-card-tag">Популярный</div>
-                    <h3>Корпоративный сайт</h3>
+                    <h3>Corporate-сайт</h3>
                     <div class="price-value">от 35 000 ₽</div>
                     <div class="price-hosting-info">+ Техподдержка 1 месяц</div>
                     <ul class="price-features-list">
@@ -685,9 +687,10 @@
                         <li>Многостраничная структура</li>
                         <li>Каталог товаров / услуг</li>
                     </ul>
-                    <button class="price-btn">Выбрать тариф</button>
+                    <button class="price-btn">Подробнее о тарифе</button>
                 </div>
-                <div class="price-card" style="--accent-color: #b800ff; --shadow-color: rgba(184, 0, 255, 0.15);" onclick="showPage('contact')">
+                <!-- Карточка 3: Магазин -->
+                <div class="price-card" style="--accent-color: #b800ff; --shadow-color: rgba(184, 0, 255, 0.15);" onclick="window.open('tariff.html?type=shop', '_blank')">
                     <div class="price-card-tag">Максимум</div>
                     <h3>Интернет-магазин</h3>
                     <div class="price-value">от 60 000 ₽</div>
@@ -697,7 +700,7 @@
                         <li>Корзина и онлайн-оплата</li>
                         <li>Фильтры и личный кабинет</li>
                     </ul>
-                    <button class="price-btn">Выбрать тариф</button>
+                    <button class="price-btn">Подробнее о тарифе</button>
                 </div>
             </div>
         </section>
@@ -708,7 +711,7 @@
                     <p>Запишитесь на бесплатную консультацию. Обсудим ваш проект, наметим структуру и рассчитаем точную смету за 30 минут.</p>
                     <div class="manager-card">
                         <div class="manager-title">По всем вопросам</div>
-                        <div class="manager-name" onclick="openMap()" style="cursor: pointer; text-decoration: underline;">Генеральный менеджер С.Г.Х. (Ярославль)</div>
+                        <div class="manager-name" onclick="openMap()" style="cursor: pointer; text-decoration: underline;">Генеральный менеджер Х.Х.Х. (Ярославль)</div>
                         <a href="tel:+79991234567" class="manager-phone">+7 (999) 123-45-67</a>
                     </div>
                 </div>
