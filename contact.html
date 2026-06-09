@@ -30,16 +30,18 @@
         }
 
         body {
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-            position: relative;
-            overflow: hidden;
-        }
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    position: relative;
+    /* ИСПРАВЛЕНИЕ ТУТ: убираем жесткий hidden */
+    overflow-x: hidden;
+    overflow-y: auto;
+}
 
         /* 🌌 ЗАДНИЙ ФОН И СЕТКА */
         .bg-container {

@@ -28,17 +28,19 @@
             font-family: 'Segoe UI', Roboto, sans-serif;
         }
 
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-            position: relative;
-            overflow: hidden;
-        }
+       body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    position: relative;
+    /* ИСПРАВЛЕНИЕ ТУТ: разрешаем вертикальный скролл, если контент не влезает */
+    overflow-x: hidden; 
+    overflow-y: auto; 
+}
 
         /* Сеточный фон */
         .bg-grid {
