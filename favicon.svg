@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <rect width="512" height="512" fill="#000000"/>
+  
+  <text x="50%" y="53%" 
+        dominant-baseline="middle" 
+        text-anchor="middle" 
+        font-family="system-ui, -apple-system, sans-serif" 
+        font-size="210" 
+        font-weight="900" 
+        letter-spacing="-10">
+    <tspan fill="#ff3366" stroke="#ffffff" stroke-width="8" stroke-linejoin="round">Y</tspan>
+    <tspan fill="#ffffff" stroke="#ff3366" stroke-width="8" stroke-linejoin="round">W</tspan>
+  </text>
+</svg>
